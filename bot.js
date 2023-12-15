@@ -1,16 +1,12 @@
-/**
- * https://github.com/fabe/telegram-chatgpt-bot-worker
- */
-
-const API_KEY = "OPENAI_API_TOKEN"; // Get it from https://platform.openai.com/account/api-keys
-const TOKEN = "TELEGRAM_BOT_TOKEN"; // Get it from @BotFather https://core.telegram.org/bots#6-botfather
+const API_KEY = "free"; // Get it from https://platform.openai.com/account/api-keys
+const TOKEN = "6960223747:AAG9B6dcDdcn2-DDQI8GtDeZ9A1_XtYeRIQ"; // Get it from @BotFather https://core.telegram.org/bots#6-botfather
 const CHAT_ID = null; // Integer, Chat ID of your Telegram chat. If you don't want to verify, set to null
 
-const GPT_MODEL = "gpt-3.5-turbo";
+const GPT_MODEL = "gpt-4";
 const GPT_MAX_TOKENS = 1024;
 const GPT_TEMPERATURE = 0.7;
 const WEBHOOK = "/endpoint";
-const SECRET = "WEBHOOK_SECRET"; // A-Z, a-z, 0-9, _ and -
+const SECRET = "a"; // A-Z, a-z, 0-9, _ and -
 
 /**
  * Wait for requests to the worker
@@ -66,7 +62,7 @@ async function onMessage(message) {
 
   await sendTyping(message.chat.id);
 
-  const response = await fetch("https://api.openai.com/v1/chat/completions", {
+  const response = await fetch("https://ngoctuanai-gpt4api.hf.space/api/openai/chat/completions", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
